@@ -2,7 +2,7 @@
 
 Prerequisites: Java 1.11, Maven 4.0.
 
-This Monty Hall Simulation application will shows the probability to win the game when the participant decides to switch the box. 
+This Monty Hall Simulation application will shows the probability to win the game based on the STICK or CHANGE strategy. 
 
 To package the application, run the following command in command line:
 
