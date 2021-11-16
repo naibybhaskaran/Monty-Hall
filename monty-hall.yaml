@@ -1,0 +1,52 @@
+openapi: 3.0.1
+info:
+  title: Monty Hall game API
+  description: This API that randomly simulates the <b>Monty Hall </b>game over and over and respond the probability to win the game based on the STICK or CHANGE strategy.
+  version: 1.0.0
+servers:
+- url: https://<tbd>/
+paths:
+  /playgame/v1:
+    get:
+      tags: 
+      - Monty Hall
+      summary: Get the probability to win the Monty Hall game
+      description: This method returns the probability to win the Monty Hall game based on STICK or CHANGE strategy.
+      operationId: playMontyHall
+      parameters:
+      - name: limit
+        in: query
+        description: 'The maximum number of times the game plays'
+        schema:
+          type: integer
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GameResponse'
+        400: 
+          description: Bad Request
+components:
+  schemas:
+    GameResponse:
+      type: object
+      properties:
+        numberOfGames:
+          description: The maximum number of times the game plays.
+          type: integer
+          example: 10000
+        stickWinProbability: 
+          description: The probability to win the game if the participant sticks on the choosen box.
+          type: integer
+          example: 0.3323
+        changeWinProbability: 
+          description: The probability to win the game if the participant decides to change the box.
+          type: integer
+          example: 0.6677
+      required:
+        - numberOfGames
+        - stickWinProbability
+        - changeWinProbability
+   
