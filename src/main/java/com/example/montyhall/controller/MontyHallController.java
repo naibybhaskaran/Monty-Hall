@@ -43,7 +43,6 @@ public class MontyHallController {
 		for(int i=0; i< numberOfGames; i++){
 
 			boxes = gameSimulator.playGame();
-
 			if (boxes.stream()
 					.filter(b -> b.isSelectedByParticipant() && b.isContainsMoney())
 					.findFirst().isEmpty()) {
