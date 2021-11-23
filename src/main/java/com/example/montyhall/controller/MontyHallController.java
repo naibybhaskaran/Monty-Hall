@@ -37,8 +37,8 @@ public class MontyHallController {
 			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 		}
 
-		int stickWinCount = 0;
-		int changeWinCount = 0;
+		var stickWinCount = 0;
+		var changeWinCount = 0;
 
 		for(var i=0; i< numberOfGames; i++){
 
