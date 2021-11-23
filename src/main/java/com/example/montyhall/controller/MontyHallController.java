@@ -25,7 +25,7 @@ public class MontyHallController {
 					throws MontyHallException {
 		
 		GameSimulator gameSimulator = new GameSimulator();
-		int numberOfGames = 0;
+		var numberOfGames = 0;
 		List<Box> boxes;
 
 		try {
@@ -40,7 +40,7 @@ public class MontyHallController {
 		int stickWinCount = 0;
 		int changeWinCount = 0;
 
-		for(int i=0; i< numberOfGames; i++){
+		for(var i=0; i< numberOfGames; i++){
 
 			boxes = gameSimulator.playGame();
 			if (boxes.stream()
