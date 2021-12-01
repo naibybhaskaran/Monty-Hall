@@ -18,15 +18,17 @@ import com.example.montyhall.service.GameSimulator;
 @RestController
 @RequestMapping("/playgame/v1")
 public class MontyHallController {
-
+	
+	private final GameSimulator gameSimulator = new GameSimulator();
+	
+	private List<Box> boxes;
+	
 	@GetMapping
 	public ResponseEntity<GameResult> playMontyHall(
 			@RequestParam(value="limit", name = "limit", defaultValue="10000") String limit) 
 					throws MontyHallException {
 		
-		GameSimulator gameSimulator = new GameSimulator();
 		var numberOfGames = 0;
-		List<Box> boxes;
 
 		try {
 			numberOfGames = Integer.parseInt(limit);
